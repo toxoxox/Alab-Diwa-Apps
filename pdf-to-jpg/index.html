@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alab Diwa | PDF to Image Converter</title>
+    
+    <!-- Add favicon links -->
+    <link rel="icon" type="image/png" href="alab-logo.png">
+    <link rel="apple-touch-icon" href="alab-logo.png">
+    
+    <link rel="stylesheet" href="main.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="loader-wrapper">
+        <div class="loader-content">
+            <div class="cube-wrapper">
+                <div class="cube">
+                    <div class="cube__face cube__face--front">A</div>
+                    <div class="cube__face cube__face--back">D</div>
+                    <div class="cube__face cube__face--right">L</div>
+                    <div class="cube__face cube__face--left">B</div>
+                    <div class="cube__face cube__face--top">A</div>
+                    <div class="cube__face cube__face--bottom">W</div>
+                </div>
+            </div>
+            <div class="title"><span>ALAB</span> <span>DIWA</span></div>
+            <div class="line"></div>
+            <div class="subtitle">MADE BY EARL</div>
+        </div>
+    </div>
+
+    <header class="header">
+        <div class="header__container">
+            <span class="header__logo-text">Alab Diwa</span>
+            <h1 class="header__title">PDF to Image Converter</h1>
+        </div>
+    </header>
+
+    <main class="main">
+        <section class="converter" aria-label="PDF conversion section">
+            <div class="converter__upload-area" id="uploadArea">
+                <input 
+                    type="file" 
+                    id="pdfInput" 
+                    class="converter__file-input" 
+                    accept=".pdf"
+                    aria-label="Choose PDF file to convert"
+                >
+                <svg class="converter__upload-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M17 8l-5-5-5 5" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M12 3v12" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <h2 class="converter__title">Drop your PDF here</h2>
+                <p class="converter__subtitle">or click to browse</p>
+            </div>
+
+            <div class="settings__group">
+                <label for="imageQuality" class="settings__label">Image Quality:</label>
+                <select id="imageQuality" class="settings__select">
+                    <option value="high">High Quality</option>
+                    <option value="medium" selected>Medium Quality</option>
+                    <option value="low">Low Quality</option>
+                </select>
+            </div>
+
+            <button 
+                id="convertButton" 
+                class="converter__button" 
+                disabled
+                aria-label="Convert PDF to images"
+            >
+                Convert to Images
+            </button>
+
+            <div id="results" class="converter__results" aria-live="polite"></div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 Alab Diwa. All rights reserved.</p>
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+</html>
